@@ -11,37 +11,20 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Employee List </h1>
-    <table class="table table-sm">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>edwsfwse</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
+    
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+   <h5 class="card-title">Employee Details</h5>
+{% if employee.photo %}
+    <img src="{{ employee.photo.url }}" alt="Employee Photo" class="img-thumbnail" style="max-width:150px;">
+{% else %}
+    <img src="https://via.placeholder.com/150" alt="No Photo" class="img-thumbnail">
+{% endif %}
+<h6 class="card-subtitle mb-2 text-muted">{{ employee.first_name }}</h6>
+<p class="card-text">{{ employee.last_name }}</p>
+<a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to Home</a>
+  </div>
+</div>
 
 
     <!-- Optional JavaScript -->
